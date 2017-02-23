@@ -24,5 +24,5 @@ Place `[create_new_post]` shortcode to render the frontend form for creating pos
 ## Minimum Requirement
  - PHP 5.5.0
  
- ## Author
+## Author
 [Khan Mohammad Rashedun-Naby](http://rnaby.github.io)
