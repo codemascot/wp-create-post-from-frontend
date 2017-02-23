@@ -125,6 +125,10 @@ class Wp_Create_Post_From_Frontend_Public {
      * @since    1.0.0
      */
     public function render_form() {
-        include 'partials/html-create-post-form.php';
+        if (is_user_logged_in()){
+            include 'partials/html-create-post-form.php';
+        } else {
+            echo '<p>Please login first.</p>';
+        }
     }
 }
