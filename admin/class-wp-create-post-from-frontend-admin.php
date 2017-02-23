@@ -100,4 +100,24 @@ class Wp_Create_Post_From_Frontend_Admin {
 
 	}
 
+    /**
+     * Handles $_POST from create post form.
+     *
+     * @since    1.0.0
+     */
+	public function create_post() {
+	    $nonce = new \Brain\Nonces\WpNonce('_wp_nonce');
+        if (! $nonce->validate()) {
+            wp_die("No naughty business please");
+        }
+        $new_post = array(
+            'post_title'    => wp_strip_all_tags( $_POST['post_title'] ),
+            'post_content'  => $_POST['post_content'],
+            'post_status'   => 'publish'
+        );
+        // Insert the post into the database
+        wp_insert_post( $new_post );
+        wp_safe_redirect( wp_get_referer() );
+        die();
+    }
 }

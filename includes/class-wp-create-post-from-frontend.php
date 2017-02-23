@@ -154,6 +154,8 @@ class Wp_Create_Post_From_Frontend {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_action( 'admin_post_create_post', $plugin_admin, 'create_post' );
+
 	}
 
 	/**
@@ -169,6 +171,8 @@ class Wp_Create_Post_From_Frontend {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		add_shortcode( 'create_new_post', array( $plugin_public, 'render_form' ) );
 
 	}
 

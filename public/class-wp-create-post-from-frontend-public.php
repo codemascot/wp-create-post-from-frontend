@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -40,6 +39,24 @@ class Wp_Create_Post_From_Frontend_Public {
 	 */
 	private $version;
 
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $nonce    Generated nonce.
+     */
+    private $nonce;
+
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string    $post_url    WordPress POST URL.
+     */
+    private $post_url;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -51,6 +68,8 @@ class Wp_Create_Post_From_Frontend_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+        $this->nonce = new \Brain\Nonces\WpNonce('_wp_nonce');
+        $this->post_url = admin_url('admin-post.php');
 
 	}
 
@@ -100,4 +119,12 @@ class Wp_Create_Post_From_Frontend_Public {
 
 	}
 
+    /**
+     * The method for rendering from by shortcode.
+     *
+     * @since    1.0.0
+     */
+    public function render_form() {
+        include 'partials/html-create-post-form.php';
+    }
 }
