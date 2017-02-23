@@ -1,0 +1,19 @@
+{
+    "name": "rnaby/wp-create-post-from-frontend",
+    "description": "It's a WordPress plugin to create post from forntend which is secured by WP nonce OOP implementation. And this plugin is compatible with Composer PHP package manager. That means this plugin can also be installed with Composer PHP package manager.",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=5.5.0",
+        "brain/nonces": ">=1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Khan Mohammad Rashedun-Naby",
+            "email": "naby88@gmail.com"
+        }
+    ]
+}

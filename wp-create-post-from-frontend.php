@@ -30,6 +30,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/*
+ * Auto loading vendor files and classes
+ */
+require __DIR__ . '/vendor/autoload.php';
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-wp-create-post-from-frontend-activator.php
